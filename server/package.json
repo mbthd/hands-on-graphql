@@ -1,0 +1,21 @@
+{
+  "name": "graphpost",
+  "version": "1.0.0",
+  "description": "server of the graphql tutorial",
+  "main": "index.js",
+  "scripts": {
+    "start": "node_modules/babel-cli/bin/babel-node.js index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ramiro Blazquez Gonzalez",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3"
+  }
+}
