@@ -9,7 +9,7 @@ import {
 
 import App from './App';
 
-const networkInterface = createNetworkInterface({ uri: 'http://localhost:3000/graphql' });
+const networkInterface = createNetworkInterface({ uri: 'http://localhost:4000/graphql' });
 networkInterface.use([{
   applyMiddleware(req, next) {
     setTimeout(next, 500);

@@ -3,6 +3,7 @@ import bodyparser from 'body-parser';
 
 const app = express()
 
+server.use('*', cors({ origin: 'http://localhost:3000' }));
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
 
