@@ -2,6 +2,7 @@ import express from 'express';
 import graphqlHTTP from 'express-graphql';
 import bodyparser from 'body-parser';
 import mongoose from 'mongoose';
+import cors from 'cors';
 
 import schema from './schema.js';
 
@@ -23,7 +24,7 @@ conn.once('open', () => {
 
 const app = express()
 
-server.use('*', cors({ origin: 'http://localhost:3000' }));
+app.use('*', cors({ origin: 'http://localhost:3000' }));
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(bodyparser.json());
