@@ -12,7 +12,7 @@ const PostsList = ({ data: {loading, error, posts }}) => {
   		return (
 			<div>
 			    { posts.map( p =>
-			        (<div key={p.id}>
+			        (<div key={p._id}>
 			            {p.text}
 			        </div>)
 			    )}

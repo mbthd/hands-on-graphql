@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const Header = ({title}) => (<h1>{title}</h1>)
 

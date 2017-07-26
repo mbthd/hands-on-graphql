@@ -4,7 +4,6 @@ import {
   ApolloClient,
   ApolloProvider,
   createNetworkInterface,
-  toIdValue,
 } from 'react-apollo';
 
 import App from './App';
