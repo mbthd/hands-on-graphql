@@ -15,37 +15,7 @@ let Post = mongoose.model('Post', PostSchema);
 module.exports = Post;
 
 // A-V-R auth-validation-resolution- ¿ofuscation?
-module.exports.getListOfPosts = (root, {}) => {
-  return new Promise((resolve, reject) => {
-    Post.find({}).exec((err, res) => {
-      console.log(res);
-      err ? reject(err) : resolve(res);
-    });
-  });
-};
-
-module.exports.getPostById = (root, {id}) => {
-  return new Promise((resolve, reject) => {
-    Post.findOne({_id:id}).exec((err, res) => {
-      err ? reject(err) : resolve(res);
-    })
-  });
-};
-
-module.exports.addPost = (root, {text}) => {
-  var newPost = new Post({text:text});
-  return new Promise((resolve, reject) => {
-    newPost.save((err, res) => {
-      err ? reject(err): resolve(res);
-    });
-  });
-};
-
-module.exports.removePost = (root, {id}) => {
-  return new Promise((resolve, reject) => {
-    Post.findOne({_id: id}).remove().exec((err, res) => {
-      console.log(res);
-      err ? reject(err): resolve(res);
-    });
-  });
-};
+module.exports.getListOfPosts = (root, {}) => Post.find({}).exec();
+module.exports.getPostById = (root, {id}) => Post.findOne({_id:id}).exec();
+module.exports.addPost = (root, {text}) => new Post({ text }).save();
+module.exports.removePost = (root, {id}) => Post.findOne({_id: id}).remove().exec();
